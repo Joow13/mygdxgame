@@ -1,0 +1,4 @@
+alan,2
+alan,1
+ZYA,3
+XXY,0
