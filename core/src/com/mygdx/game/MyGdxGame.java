@@ -1,9 +1,11 @@
 package com.mygdx.game;
 
+import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
-// import com.badlogic.gdx.audio.Sound;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -22,7 +24,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	List<Alien> enemigos = new ArrayList<>();
 	List<Bala> disparosAEliminar = new ArrayList<>();
 	List<Alien> enemigosAEliminar = new ArrayList<>();
-
+	Sound sound;
 
 
 	Temporizador temporizadorNuevoAlien = new Temporizador(120);
@@ -31,7 +33,7 @@ public class MyGdxGame extends ApplicationAdapter {
 
 	private ScoreBoard scoreboard;
 	private boolean gameover;
-	//Sound sound;
+
 
 	@Override
 	public void create() {
@@ -43,9 +45,10 @@ public class MyGdxGame extends ApplicationAdapter {
 
 		inicializarJuego();
 
-		//sound = Gdx.audio.newSound(Gdx.files.internal("assets/espace_alien.mp3"));
+		Sound sound = Gdx.audio.newSound(Gdx.files.internal("espace_alien.mp3"));
+		sound.setLooping(sound.play(1.0f), true);
 
-		//sound.play(1.0f);
+
 	}
 
 	void inicializarJuego() {
