@@ -20,13 +20,22 @@ public class Alien {
             this.texture = new Texture("alien.png");
         } else         if(tipo.equals("alien2")) {
             x = 640;
-            y = Utils.random.nextInt(480);
+            y = Utils.random.nextInt(460);
             w = 64 * 1;
             h = 48 * 1;
             vx = -3;
             vy = 1;
             this.texture = new Texture("alien2.png");
+        }else         if(tipo.equals("alien3")) {
+            x = 640;
+            y = Utils.random.nextInt(440);
+            w = 64 * 1;
+            h = 48 * 1;
+            vx = -3;
+            vy = 1;
+            this.texture = new Texture("alien3.png");
         }
+
 
     }
 
