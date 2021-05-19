@@ -3,6 +3,7 @@ package com.mygdx.game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import java.util.ArrayList;
@@ -24,6 +25,7 @@ public class Nave {
     boolean muerto = false;
     Temporizador temporizadorFireRate = new Temporizador(20);
     Temporizador temporizadorRespawn = new Temporizador(120, false);
+    public Sound laser = Gdx.audio.newSound(Gdx.files.internal("disparo.mp3"));
 
     Nave() {
         x = 100;
@@ -43,6 +45,7 @@ public class Nave {
 
         if (Gdx.input.isKeyPressed(Input.Keys.SPACE) && temporizadorFireRate.suena() && !muerto) {
             disparos.add(new Bala(x + w / 2, y + h/2));
+            laser.play();
         }
 
         if (x < 0) x = 0;
