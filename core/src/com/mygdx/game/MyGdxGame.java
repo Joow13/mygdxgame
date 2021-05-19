@@ -59,7 +59,6 @@ public class MyGdxGame extends ApplicationAdapter {
 		disparosAEliminar = new ArrayList<>();
 		enemigosAEliminar = new ArrayList<>();
 		scoreboard = new ScoreBoard();
-
 		gameover = false;
 	}
 
@@ -67,9 +66,9 @@ public class MyGdxGame extends ApplicationAdapter {
 		Temporizador.framesJuego += 1;
 
 		if (temporizadorNuevoAlien.suena()){
-			enemigos.add(new Alien("alien.png"));
-			enemigos.add(new Alien("alien2.png"));
-			enemigos.add(new Alien("alien3.png"));
+			enemigos.add(new Alien("alien"));
+			enemigos.add(new Alien("alien2"));
+			enemigos.add(new Alien("alien3"));
 		}
 
 

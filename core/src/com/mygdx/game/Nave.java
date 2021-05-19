@@ -43,7 +43,7 @@ public class Nave {
         if (Gdx.input.isKeyPressed(Input.Keys.W)) y += v;
         if (Gdx.input.isKeyPressed(Input.Keys.S)) y -= v;
 
-        if (Gdx.input.isKeyPressed(Input.Keys.SPACE) && temporizadorFireRate.suena() && !muerto) {
+        if (Gdx.input.isKeyJustPressed(Input.Keys.SPACE) && temporizadorFireRate.suena() && !muerto) {
             disparos.add(new Bala(x + w / 2, y + h/2));
             laser.play();
         }

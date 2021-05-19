@@ -9,14 +9,25 @@ public class Alien {
     float x, y, w, h, vx, vy;
     Temporizador cambioVelocidad = new Temporizador(60);
 
-    Alien(String imagen) {
-        x = 640;
-        y = Utils.random.nextInt(480);
-        w = 64 * 2;
-        h = 48 * 2;
-        vx = -2;
-        vy = 0;
-        this.texture = new Texture(imagen);
+    Alien(String tipo) {
+        if(tipo.equals("alien")) {
+            x = 640;
+            y = Utils.random.nextInt(480);
+            w = 64 * 2;
+            h = 48 * 2;
+            vx = -2;
+            vy = 0;
+            this.texture = new Texture("alien.png");
+        } else         if(tipo.equals("alien2")) {
+            x = 640;
+            y = Utils.random.nextInt(480);
+            w = 64 * 1;
+            h = 48 * 1;
+            vx = -3;
+            vy = 1;
+            this.texture = new Texture("alien2.png");
+        }
+
     }
 
     public void update() {
